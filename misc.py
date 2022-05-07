@@ -17,7 +17,7 @@ print(is_sorted(my_list))
 
 def enumerate_demo(input_list):
     for i, j in enumerate(input_list):
-        print(f'Here is i: {i}. Here is j: {j}.'
+        print(f'Here is i: {i}. Here is j: {j}.')
 
 aList = ['jimmy','jimi','page','hendrix','michael','jackson']
 print(enumerate_demo(aList))
@@ -106,26 +106,17 @@ def is_leap_year(a_year):
 # I followed Kevin B.'s solution.
 """determine whether all numbers in the given list are consecutive."""
 
-def is_consecutive(a_list): 
-    end=len(a_list)
-    if end < 2:
-        print(False)
-    
-    for index in range(0, end -1):
-        if a_list[index] + 1 == a_list[index + 1]:
-            continue
-        else:
+def is_consecutive(input_list):
+    print(f'Here is len(input_list) - 1: {len(input_list) -1}')
+    for i,j in enumerate(input_list):
+        print(f'Here is i: {i}. Here is j: {j}.')
+        if i == len(input_list) - 1: # This is here to prevent getting out of range
+            break
+        elif j + 1 != input_list[i+1]:
             return False
     return True
 
-list_b = [1,2,3,4,5,6,7,8,9]
-list_c = [0,1,4,5,6,7,8,9]
-list_d = [2]
-is_consecutive(list_b)
-is_consecutive(list_c)
-
-print(is_consecutive(list_b))
-print(is_consecutive(list_c))
+print(is_consecutive([1,2,4]))
 
 # Working through it in class 10/11
 
